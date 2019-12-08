@@ -1,0 +1,50 @@
+<h1>{{"dashboard_title"|translate }}</h1>
+<h3>{{"dashboard_sub_title"|translate }}</h3>
+<table class="table">
+
+
+
+  <thead>
+    <tr>
+      <th> {{"title"|translate }}
+        <input class="from-control" [(ngModel)]="titleSearch">
+      </th>
+      <th></th>
+      <th>contract : 
+          <select class="from-control" [(ngModel)]="contractSearch">
+<option value ="cdd">cdd</option>
+<option value ="cdi">cdi</option>
+<option value ="sivp">sivp</option>
+
+
+          </select>
+        </th>
+    </tr>
+    <tr>
+      <th>title</th>
+      <th>desc</th>
+      <th>salire</th>
+      <th>cont</th>
+      <th>statuts</th>
+      <th>Date</th>
+      <th>action</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr *ngFor="let post of resultats|recherche:titleSearch:contrctSearch">
+      <td (click)="cliq(post)">{{post.title}}</td>
+      <td (click)="cliq(post)">{{post.description}}</td>
+      <td (click)="cliq(post)">{{post.salaire}}</td>
+      <td (click)="cliq(post)">{{post.contract_type}}</td>
+      <td (click)="cliq(post)">{{post.status}}</td>
+      <td (click)="cliq(post)">{{post.entry_date}}</td>
+      
+   <td>
+    
+      <button class="btn btn-success" (click)="delete(post)"> <i class="fa fa-trash" aria-hidden="true"></i></button>
+      <button class="btn btn-info"   (click)="edit(post)"> <a routerLink="/edit"></a><i class="fab fa-pencil-square-o" aria-hidden="true"></i></button>
+    
+  </tbody>
+</table>

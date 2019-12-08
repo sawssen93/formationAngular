@@ -1,0 +1,73 @@
+<p>
+  container works!
+</p>
+<label>interpolation</label>
+<input class="form-control" value="{{count}}"/>
+<label>property bidding</label>
+<input class="form-control" [value]="containerTitle"/>
+<button class="btn btn-danger" (click)="affich()">btn{{statusButton}}</button>
+<button (click)="Bplus()">+</button>
+<label>{{count}}</label>
+<button (click)="Bmoin()">-</button>
+<hr>
+<label>ngModel</label>
+<input class="form-control" [(ngModel)]="user"/>
+{{user}}
+
+
+<hr>
+<label>Nom&prenom</label>
+<input class="form-control" [(ngModel)]="Nom"/>
+<label>email</label>
+<input class="form-control" [(ngModel)]="email"/>
+<label>phone</label>
+<input class="form-control" [(ngModel)]="phone"/>
+<label>about</label>
+<input class="form-control" [(ngModel)]="about"/>
+<button class="btn btn-danger" (click)="aff()">valider</button>
+<hr>
+<ul>
+
+<li *ngFor="let item of HEROES">
+  {{item.name}}
+</li>
+
+</ul>
+<hr>
+<table class="table">
+  <tr>
+  <td>id</td>
+<td>nom</td></tr>
+<tr *ngFor="let item of HEROES" [ngClass]="{'red':item.id==1,'green':item.id==2,'black':item.id==5}" >
+    <td> {{item.id}}</td>
+  <td>  {{item.name}}</td>
+</tr>
+</table>
+<hr>
+
+
+<label>cin</label>
+<input class="form-control" [(ngModel)]="cin"/>
+<label>name</label>
+<input class="form-control" [(ngModel)]="name"/>
+<label>adresse</label>
+<input class="form-control" [(ngModel)]="adresse"/>
+
+<button class="btn btn-danger" (click)="affi()">save</button>
+<hr>
+
+<table class="table">
+  <tr>
+  <td style="color:rgb(240, 85, 137)">cin</td>
+<td style="color:rgb(240, 85, 137)">name</td>
+<td style="color:rgb(240, 85, 137)">adresse</td>
+</tr>
+<tr *ngFor="let item of tab" >
+  <td> {{item.cin}}</td>
+<td>  {{item.name}}</td>
+<td>  {{item.adressse}}</td>
+</tr>
+</table>
+<hr>
+<button class="btn btn-danger" (click)="Tb()">my table</button>
+

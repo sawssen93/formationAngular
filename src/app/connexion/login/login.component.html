@@ -1,0 +1,16 @@
+<form novalidate [formGroup]="myforme">
+    
+    <div class="form-group">
+        <label for=""> Email</label>
+        <input class="form-control" formControlName="email">
+        <span class="danger" *ngIf="myforme.controls.email.invalid && (myforme.controls.email.dirty|| myforme.controls.email.touched)"> Email invalid</span>
+        </div>
+    
+        <div class="form-group">
+            <label for=""> Password</label>
+            <input class="form-control" formControlName="password">
+            <span class="danger" *ngIf="myforme.controls.password.invalid && (myforme.controls.password.dirty|| myforme.controls.password.touched)"> password invalid</span>
+            </div>
+            <button [disabled]='myforme.invalid' class="btn btn-success" (click)="addUser()"> Login</button>
+            <a routerLink="inscription">go insscri </a>
+    </form>

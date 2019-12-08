@@ -1,0 +1,31 @@
+
+<h1>Edit : </h1>
+
+<label>title</label>
+<input class="form-control" [(ngModel)]="Post.title"/>
+<label>description</label>
+<input class="form-control" [(ngModel)]="Post.description"/>
+<label>contract_type </label>
+<select class="form-control" [(ngModel)]="Post.contract_type">
+
+  <option value="cdd"> CDD</option>
+  <option value="cdd"> CDI</option>
+  <option value="cdd"> SIVP</option>
+</select>
+<label>statuts </label>
+<select class="form-control" [(ngModel)]="Post.status">
+
+  <option value="to Validate"> to validate</option>
+  <option value="ongoing"> ongoing</option>
+  <option value="closed"> closed</option>
+</select>
+
+
+
+<label>salaire</label>
+<input class="form-control" [(ngModel)]="Post.salaire"/>
+
+
+
+<button class="btn btn-danger" (click)="upd()">update</button>
+
